@@ -1,0 +1,6 @@
+---
+description: (deprecated) Используй глобальный skill tilda-landing в ~/.cursor/
+alwaysApply: false
+---
+
+Локальное правило отключено. Workflow в глобальном skill: `~/.cursor/skills/tilda-landing/SKILL.md`

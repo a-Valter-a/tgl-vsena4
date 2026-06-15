@@ -58,6 +58,7 @@
   /* ——— Reviews slider ——— */
   const reviews = $(".reviews-slider");
   if (reviews) {
+    const viewport = $(".reviews-slider__viewport", reviews);
     const track = $(".reviews-slider__track", reviews);
     const slides = $$(".reviews-slider__slide", reviews);
     const prev = $("[data-reviews-prev]", reviews);
@@ -78,20 +79,37 @@
       b.addEventListener("click", () => goTo(Number(b.dataset.index)));
     });
 
-    let touchX = 0;
-    track.addEventListener(
+    const swipeTarget = viewport || track;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    swipeTarget.addEventListener(
       "touchstart",
       (e) => {
-        touchX = e.touches[0].clientX;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        viewport?.classList.add("is-dragging");
       },
       { passive: true }
     );
-    track.addEventListener(
+
+    swipeTarget.addEventListener(
       "touchend",
       (e) => {
-        const dx = e.changedTouches[0].clientX - touchX;
-        if (Math.abs(dx) > 50) goTo(index + (dx < 0 ? 1 : -1));
+        viewport?.classList.remove("is-dragging");
+        const touch = e.changedTouches[0];
+        const dx = touch.clientX - touchStartX;
+        const dy = touch.clientY - touchStartY;
+
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+        goTo(index + (dx < 0 ? 1 : -1));
       },
+      { passive: true }
+    );
+
+    swipeTarget.addEventListener(
+      "touchcancel",
+      () => viewport?.classList.remove("is-dragging"),
       { passive: true }
     );
   }

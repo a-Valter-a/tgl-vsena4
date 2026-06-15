@@ -19,7 +19,7 @@ dest.mkdir(parents=True, exist_ok=True)
 
 mapping = {
     "__.png.webp": "logo-header.webp",
-    "photo.png": "logo-clinic.png",
+    "photo.png": "header-phone.png",
     "white_january_realis.png.webp": "hero-bg.webp",
     "photo_2025-07-11_16-.png.webp": "hero-badge.webp",
     "555.png.webp": "icon-shield.webp",
