@@ -1,0 +1,3 @@
+> </div> <div id="rec1352094451" class="r t-rec" style="opacity: 1;" data-animationappear="off" data-record-type="746"> <!-- T746 --> <div class="t746"> <div class="t-popup" data-tooltip-hook="#popup:mygallery" role="dialog" aria-modal="true" tabindex="-1"> <div class="t-popup__close t-popup__block-
+---
+sy,widthunits,leftunits,topunits" style="top: 108px; left: 1462.5px; width: 300px; height: auto;"> <div class="tn-atom" style="--lh-px: 25px; line-height: 25px;"><a href="https://tgl-vsena4.ru/#popup:mygallery" style="color: inherit" role="button" aria-haspopup="dialog"><u>Лицензия на осуществление 
